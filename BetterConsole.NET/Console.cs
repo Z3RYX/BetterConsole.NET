@@ -7,6 +7,17 @@
 
         public static void Write(object Value, System.ConsoleColor? Color = null, System.ConsoleColor? BackgroundColor = null)
         {
+            if (Value.GetType() == typeof(ColoredText))
+            {
+                ColoredText snippets = Value as ColoredText;
+
+                foreach (var snippet in snippets)
+                {
+                    Write(snippet.Value, snippet.Color, snippet.BackgroundColor);
+                    return;
+                }
+            }
+
             var defaultColors = (_ForegroundColor, _BackgroundColor);
 
             SetColor(Color, BackgroundColor);
