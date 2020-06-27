@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>BetterConsole</RootNamespace>
+    <Version>0.0.1</Version>
+    <Authors>Z3RYX</Authors>
+  </PropertyGroup>
+
+</Project>

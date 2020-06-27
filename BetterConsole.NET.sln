@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterConsole.NET", "BetterConsole.NET\BetterConsole.NET.csproj", "{226B4033-A2AE-4F25-A4A9-64D646B6B566}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{226B4033-A2AE-4F25-A4A9-64D646B6B566}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{226B4033-A2AE-4F25-A4A9-64D646B6B566}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{226B4033-A2AE-4F25-A4A9-64D646B6B566}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{226B4033-A2AE-4F25-A4A9-64D646B6B566}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1050FAAE-6D15-4032-B1E5-16AD3E1F286F}
+	EndGlobalSection
+EndGlobal
