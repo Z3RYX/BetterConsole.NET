@@ -7,6 +7,13 @@ namespace BetterConsole
 {
     public class ColoredText : List<(object Value, ConsoleColor? Color, ConsoleColor? BackgroundColor)>
     {
+        public bool Spaced { get; set; }
+
+        public ColoredText(bool Spaced = true)
+        {
+            this.Spaced = Spaced;
+        }
+
         public ColoredText Add(object Value, ConsoleColor? Color = null, ConsoleColor? BackgroundColor = null) => Add((Value, Color, BackgroundColor));
     }
 }

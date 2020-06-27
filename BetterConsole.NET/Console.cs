@@ -11,8 +11,11 @@
             {
                 ColoredText snippets = Value as ColoredText;
 
+                if (snippets.Count < 1) return;
+
                 foreach (var snippet in snippets)
                 {
+                    if (System.Console.CursorLeft != 0 && snippets.Spaced) Write(' ');
                     Write(snippet.Value, snippet.Color, snippet.BackgroundColor);
                     return;
                 }
@@ -25,6 +28,12 @@
             System.Console.Write(Value.ToString());
 
             SetColor(defaultColors._ForegroundColor, defaultColors._BackgroundColor);
+        }
+
+        public static void WriteLine(object Value, System.ConsoleColor? Color, System.ConsoleColor? BackgroundColor)
+        {
+            Write(Value, Color, BackgroundColor);
+            Write('\n');
         }
 
         private static void SetColor(System.ConsoleColor? ForegroundColor, System.ConsoleColor? BackgroundColor)
