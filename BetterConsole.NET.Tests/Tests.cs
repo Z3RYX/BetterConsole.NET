@@ -40,7 +40,7 @@ namespace BetterConsole.NET.Tests
             {
                 System.Console.WriteLine(
                       "-----------------------------------\n" +
-                     $"[{m.Method.Name}] Success? " + m() + "\n"
+                     $"[{m.Method.DeclaringType.Name}] Success? " + m() + "\n"
                     + "-----------------------------------");
             }
         }
