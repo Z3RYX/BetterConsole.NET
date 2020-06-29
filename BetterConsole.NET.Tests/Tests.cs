@@ -1,5 +1,6 @@
 ﻿using System;
-//using Console = BetterConsole.Console;
+using System.Collections.Generic;
+using Console = BetterConsole.Console;
 
 namespace BetterConsole.NET.Tests
 {
@@ -7,29 +8,41 @@ namespace BetterConsole.NET.Tests
     {
         public static void Main(string[] args)
         {
-            Console.Write("Hello ", ConsoleColor.Red);
-            Console.Write("World", ConsoleColor.Blue);
-            Console.Write("!\n");
-            Console.WriteLine();
+            var tests = new Tester();
 
-            Console.WriteLine("string");
-            Console.WriteLine('c');
-            Console.WriteLine(123);
-            Console.WriteLine(0.5);
-            Console.WriteLine(0xFF);
-            Console.WriteLine();
+            tests.CollectTests(
+                WriteLine.Test
+                );
 
-            var test1 = Console.ReadLine().GetType();
-            var test2 = Console.ReadLine<int>().GetType();
-            var test3 = Console.ReadLine<bool>().GetType();
+            tests.RunTests();
+        }
+    }
 
-            ColoredText text = new ColoredText()
-                .New(test1, ConsoleColor.Red)
-                .New(test2, ConsoleColor.Green)
-                .New(test3, ConsoleColor.Blue);
+    public class Tester
+    {
+        public List<Func<bool>> TestMethods;
 
-            Console.WriteLine(text.Snippets.Count);
-            Console.WriteLine(text);
+        public Tester()
+        {
+            TestMethods = new List<Func<bool>>();
+        }
+
+        public void CollectTests(params Func<bool>[] Tests)
+        {
+            TestMethods.AddRange(Tests);
+        }
+
+        public void RunTests()
+        {
+            if (TestMethods.Count < 1) return;
+
+            foreach (var m in TestMethods)
+            {
+                System.Console.WriteLine(
+                      "-----------------------------------\n" +
+                     $"[{m.Method.Name}] Success? " + m() + "\n"
+                    + "-----------------------------------");
+            }
         }
     }
 }
