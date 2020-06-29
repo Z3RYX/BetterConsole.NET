@@ -7,6 +7,8 @@
 
         public static void Write(object Value, System.ConsoleColor? Color = null)
         {
+            if (Value == null) return;
+
             if (Value.GetType() == typeof(ColoredText))
             {
                 var coloredText = Value as ColoredText;
