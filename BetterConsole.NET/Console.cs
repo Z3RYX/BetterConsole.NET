@@ -9,16 +9,18 @@
         {
             if (Value.GetType() == typeof(ColoredText))
             {
-                ColoredText snippets = Value as ColoredText;
+                var coloredText = Value as ColoredText;
+                var snippets = coloredText.Snippets;
 
                 if (snippets.Count < 1) return;
 
                 foreach (var snippet in snippets)
                 {
-                    if (System.Console.CursorLeft != 0 && snippets.Spaced) Write(' ');
+                    if (System.Console.CursorLeft != 0 && coloredText.Spaced) Write(' ');
                     Write(snippet.Value, snippet.Color);
-                    return;
                 }
+
+                return;
             }
 
             var defaultColors = (_ForegroundColor, _BackgroundColor);
@@ -29,6 +31,8 @@
 
             SetColor(defaultColors._ForegroundColor, defaultColors._BackgroundColor);
         }
+
+        public static void WriteLine() => Write('\n');
 
         public static void WriteLine(object Value, System.ConsoleColor? Color = null)
         {
