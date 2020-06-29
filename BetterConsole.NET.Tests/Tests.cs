@@ -1,5 +1,5 @@
 ﻿using System;
-using Console = BetterConsole.Console;
+//using Console = BetterConsole.Console;
 
 namespace BetterConsole.NET.Tests
 {

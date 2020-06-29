@@ -46,7 +46,14 @@
         {
             string input = System.Console.ReadLine();
 
-            return (T)System.Convert.ChangeType(input, typeof(T));
+            try
+            {
+                return (T)System.Convert.ChangeType(input, typeof(T));
+            }
+            catch (System.FormatException ex)
+            {
+                throw new System.Exception($"The supplied type [{typeof(T).Name}] has no explicit conversion method from string", ex);
+            }
         }
 
         public static void SetColor(System.ConsoleColor? ForegroundColor = null, System.ConsoleColor? BackgroundColor = null)
