@@ -58,6 +58,8 @@
             }
         }
 
+        public static System.ConsoleKeyInfo ReadKey(bool Intercept = true) => System.Console.ReadKey(Intercept);
+
         public static void SetColor(System.ConsoleColor? ForegroundColor = null, System.ConsoleColor? BackgroundColor = null)
         {
             _BackgroundColor = BackgroundColor ?? _BackgroundColor;
