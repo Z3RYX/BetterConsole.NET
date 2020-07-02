@@ -60,6 +60,17 @@
 
         public static System.ConsoleKeyInfo ReadKey(bool Intercept = true) => System.Console.ReadKey(Intercept);
 
+        public static System.ConsoleKeyInfo WaitForKey(System.ConsoleKey? Key = null)
+        {
+            if (Key == null) return ReadKey();
+
+            var inKey = ReadKey();
+
+            while (inKey.Key != Key) { inKey = ReadKey(); }
+
+            return inKey;
+        }
+
         public static void SetColor(System.ConsoleColor? ForegroundColor = null, System.ConsoleColor? BackgroundColor = null)
         {
             _BackgroundColor = BackgroundColor ?? _BackgroundColor;
