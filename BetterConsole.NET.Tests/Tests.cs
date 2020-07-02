@@ -11,7 +11,8 @@ namespace BetterConsole.NET.Tests
             var tests = new Tester();
 
             tests.CollectTests(
-                WriteLine.Test
+                WriteLine.Test,
+                ReadKey.Test
                 );
 
             tests.RunTests();
