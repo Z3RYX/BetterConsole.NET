@@ -9,7 +9,7 @@ namespace BetterConsole.ANSI
     /// <summary>
     /// ANSI API that allows console manipulation
     /// </summary>
-    internal static class ANSIAPI
+    public static class ANSIAPI
     {
         // Private Fields
 
@@ -44,7 +44,7 @@ namespace BetterConsole.ANSI
 
     }
 
-    internal enum Colors
+    public enum Colors
     {
         BLACK   = 30,
         RED     = 31,
@@ -57,14 +57,14 @@ namespace BetterConsole.ANSI
         CUSTOM  = 38
     }
 
-    internal enum Decoration
+    public enum Decoration
     {
         BOLD        = 1,
         UNDERLINE   = 4,
         INVERTED    = 7
     }
 
-    internal enum Directions
+    public enum Directions
     {
         UP      = 65,
         DOWN    = 66,
@@ -72,7 +72,7 @@ namespace BetterConsole.ANSI
         LEFT    = 68
     }
 
-    internal enum ClearType
+    public enum ClearType
     {
         FROM_CUR_TO_END = 0,
         FROM_BEG_TO_CUR = 1,

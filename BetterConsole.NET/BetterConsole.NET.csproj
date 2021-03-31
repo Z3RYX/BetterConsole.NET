@@ -3,8 +3,11 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>BetterConsole</RootNamespace>
-    <Version>0.0.1</Version>
+    <Version>0.1.1</Version>
     <Authors>Z3RYX</Authors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/Z3RYX/BetterConsole.NET</PackageProjectUrl>
+    <Description>A .NET package that allows you to easily use colors and other cool things in the console that hopefully make your life just a little bit easier.</Description>
   </PropertyGroup>
 
 </Project>
